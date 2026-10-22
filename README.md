@@ -2,14 +2,37 @@
 
 Adaptation en Go (Ebitengine) du jeu de François Nédélec paru en encart dans
 *Jeux & Stratégie* (1983, dessin Claude Lacroix), d'après la règle et
-l'encart du magazine. Vous
-dirigez une compagnie d'aviation postale contre une à trois compagnies menées
-par l'ordinateur (Mermoz, Guillaumet, Saint-Exupéry) : le premier qui a
-rapporté 13 sacs de courrier à Paris gagne.
+l'encart du magazine. Vous dirigez une compagnie d'aviation postale contre
+une à trois compagnies menées par l'ordinateur (Mermoz, Guillaumet,
+Saint-Exupéry) : le premier qui a rapporté 13 sacs de courrier à Paris gagne.
+
+## Compiler
+
+Il faut [Go](https://go.dev/dl/) 1.27.1 ou plus récent. Les images et les
+polices sont intégrées au binaire : il se suffit à lui-même.
 
 ```
-go run .
+git clone https://github.com/alexdeba/aeropostale.git
+cd aeropostale
+go build -o aeropostale .
+./aeropostale
 ```
+
+`go run .` lance le jeu sans garder de binaire.
+
+Selon le système :
+
+- **Linux** : Ebitengine a besoin d'un compilateur C et des en-têtes OpenGL
+  et X11. Sous Debian ou Ubuntu :
+  ```
+  sudo apt install gcc pkg-config libgl1-mesa-dev libxcursor-dev libxi-dev \
+      libxinerama-dev libxrandr-dev libxxf86vm-dev
+  ```
+- **macOS** : les outils en ligne de commande de Xcode
+  (`xcode-select --install`).
+- **Windows** : rien de plus. `go build -o aeropostale.exe .` donne le
+  binaire. On peut aussi le produire depuis Linux ou macOS :
+  `GOOS=windows go build -o aeropostale.exe .`
 
 ## Déroulement
 
