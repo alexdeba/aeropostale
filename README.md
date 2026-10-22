@@ -103,25 +103,6 @@ des moyen-courriers pour la navette, puis des long-courriers, et quelques
 pistes relais une fois sa flotte faite. Les parties entre ordinateurs durent
 une vingtaine de tours.
 
-## Tests et captures
-
-```
-go test ./...
-UNE=graine,joueurs go test ./jeu -run TestUne -v      # journal d'une partie
-./aeropostale -shot accueil.png                        # accueil
-./aeropostale -ecran jeu -graine 4 -tours 3 -arret decoller -survol 24,2 -shot vol.png
-./aeropostale -ecran jeu -graine 7 -tours 6 -arret equiper -piste -survol 23,5 -shot piste.png
-./aeropostale -ecran jeu -graine 3 -tours 2 -arret equiper -devis 23,3 -shot devis.png
-./aeropostale -ecran jeu -graine 2 -temeraire -arret crash -shot panne.png
-./aeropostale -ecran jeu -graine 3 -pistedepart 23,3 -arret escale -shot escale.png
-./aeropostale -ecran jeu -graine 3 -tours 60 -shot fin.png
-./aeropostale -regle 3 -shot regle.png
-```
-
-`-arret` fait jouer l'ordinateur à votre place jusqu'à la demande voulue
-(equiper, devis, avion, decoller, voler, crash, escale) ; `-temeraire` le fait
-voler au-delà de son autonomie pour provoquer des pannes.
-
 ## Crédits et licence
 
 *Aéropostale* est un jeu de François Nédélec, paru en encart dans
