@@ -55,31 +55,6 @@ puis chaque compagnie joue équipement, déplacements, ravitaillement.
 Touches : R la règle (6 pages, flèches), A accélérer l'ordinateur, Échap / clic
 droit annuler, F11 plein écran.
 
-## Organisation
-
-- `jeu/` : les règles, sans interface — `plateau.go` (27 rangées d'hexagones
-  pointe en haut, voisins, distances, rose des vents), `plateau_donnees.go`
-  (terrains, fleuves et villes, généré), `etat.go` (avions, pistes, achats,
-  courrier, primes, ravitaillement), `vol.go` (tableau 2 : jet d'autonomie,
-  coût selon le vent et la montagne, pannes, crash, survie), `tour.go`,
-  `ia.go`, `controleur.go`.
-- `partie.go` : le moteur joue dans sa goroutine ; le joueur humain répond par un canal.
-- `plateau.go`, `jetons.go`, `vue.go`, `panneau.go`, `regles.go`,
-  `accueil.go` : interface. Le plateau est entièrement redessiné (textures de
-  plaine, désert, jungle, montagne, îlots, fleuves, côtes, villes, rose des
-  vents d'Éole, bande des tours) ; les avions sont dessinés vus de dessus, aux
-  couleurs des pions, et tournés dans le sens du vol.
-- Habillage « poste aérienne des années 1930 » : plateau en timbre-poste
-  dentelé, panneau à liseré rouge et bleu des enveloppes *par avion*, consignes
-  en télégramme tapé à la machine, boutons Art déco marine et or. Polices
-  Limelight, Josefin Sans, Special Elite (OFL / Apache, `assets/polices`).
-- Images conservées : la couverture (à l'accueil), le titre
-  de la règle (masque d'encre, sur le plateau et le panneau), les trois avions
-  dessinés dans la règle (boutons d'achat).
-- Le plateau (terrains, fleuves, villes) a été relevé sur une photo de
-  l'encart par un outil qui n'est pas distribué : le résultat est dans
-  `jeu/plateau_donnees.go`.
-
 ## Choix d'adaptation
 
 La règle est appliquée telle quelle ; là où elle est muette ou ambiguë :
